@@ -1,0 +1,165 @@
+/* Stili generali */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #ff7e5f, #feb47b, #86a8e7, #91eae4);
+    background-size: 400% 400%;
+    animation: gradientBackground 15s ease infinite;
+}
+
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.calculator-box {
+    background-color: rgba(255, 255, 255, 0.9); /* Sfondo semi-trasparente */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.calculator-box:hover {
+    transform: scale(1.05); /* Effetto zoom leggero al passaggio del mouse */
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.result-box {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f0f8ff;
+    border-radius: 5px;
+    color: #007bff;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Responsività per schermi piccoli */
+@media (max-width: 480px) {
+    .calculator-box {
+        padding: 20px;
+        max-width: 100%;
+    }
+}
+/* Aggiungere questo alla fine del tuo CSS */
+.balloons-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.balloon {
+    position: absolute;
+    bottom: -100px;
+    width: 30px;
+    height: 40px;
+    background-color: red;
+    border-radius: 50%;
+    animation: balloon-rise 5s ease-in infinite;
+    opacity: 0;
+    transform-origin: bottom center;
+}
+
+.balloon::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    margin-left: -30px;
+    background-color: inherit;
+    border-radius: 50%;
+}
+
+@keyframes balloon-rise {
+    0% {
+        transform: scale(0.5) translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5) translateY(-100vh);
+        opacity: 0;
+    }
+}
+
+.balloon:nth-child(1) { background-color: #ff6f61; left: 10%; }
+.balloon:nth-child(2) { background-color: #ffcc5c; left: 25%; animation-delay: 1s; }
+.balloon:nth-child(3) { background-color: #88d8b0; left: 40%; animation-delay: 2s; }
+.balloon:nth-child(4) { background-color: #f991cc; left: 55%; animation-delay: 3s; }
+.balloon:nth-child(5) { background-color: #6a9eea; left: 70%; animation-delay: 4s; }
