@@ -8,7 +8,7 @@ document.getElementById('marriageForm').addEventListener('submit', function(even
     const partnersGroom = parseInt(document.getElementById('partnersGroom').value);
 
     // Formula per calcolare il valore del matrimonio
-    const baseValue = 20000; // Valore di base del matrimonio
+    const baseValue = 100.000; // Valore di base del matrimonio
     const penaltyPerPartner = 500; // Penalità per ogni partner
     const ageDifferencePenalty = 100; // Penalità per ogni anno di differenza d'età
 
